@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
-class ListagemViewController: UIViewController, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+class ListagemViewController: UIViewController, NSFetchedResultsControllerDelegate {
 
+    @IBOutlet weak var listaLinks: UITableView!
+    
     var pasta: String?
     let contexto = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
@@ -18,12 +21,27 @@ class ListagemViewController: UIViewController, UITableViewDataSource, NSFetched
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchedResultController = getFetchedResultController()
+        fetchedResultController.delegate = self
+        
 
         do{
             try fetchedResultController.performFetch()
         } catch let error as NSError{
             print("Erro ao buscar tarefas: \(error), \(error.userInfo)")
         }
+    }
+    
+    func getFetchedResultController() -> NSFetchedResultsController {
+        fetchedResultController = NSFetchedResultsController(fetchRequest: taskFetchRequest(), managedObjectContext: contexto, sectionNameKeyPath: nil, cacheName: nil)
+        return fetchedResultController
+    }
+    
+    func taskFetchRequest() -> NSFetchRequest {
+        let fetchRequest = NSFetchRequest(entityName: "Link")
+        let sortDescription = NSSortDescriptor(key: "url", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescription]
+        return fetchRequest
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,9 +54,13 @@ class ListagemViewController: UIViewController, UITableViewDataSource, NSFetched
         return 1
     }
     
+
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellLink", forIndexPath: indexPath)
+//        let link = fetchedResultController.objectAtIndexPath(indexPath) as! Link
+        cell.textLabel?.text = "Teste"
+        return cell
     }
 
     /*

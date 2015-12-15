@@ -40,7 +40,7 @@
                                                     <rect key="frame" x="34" y="14" width="42" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -65,7 +65,15 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Dxc-Go-Zvy" secondAttribute="trailing" constant="-20" id="Tyw-W2-OzX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="linkhub" id="dsK-5K-kQ3"/>
+                    <navigationItem key="navigationItem" title="LinkHub" id="PwZ-BU-ULm">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="4cp-30-2Mb">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="td1-S8-aF3">
+                                <rect key="frame" x="558" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="CollectionPastas" destination="Dxc-Go-Zvy" id="LYe-PE-T1m"/>
                     </connections>
@@ -74,10 +82,10 @@
             </objects>
             <point key="canvasLocation" x="-275" y="1340"/>
         </scene>
-        <!--View Controller-->
+        <!--Listagem View Controller-->
         <scene sceneID="Cw4-O7-Uhy">
             <objects>
-                <viewController id="lYt-EE-n3M" sceneMemberID="viewController">
+                <viewController id="lYt-EE-n3M" customClass="ListagemViewController" customModule="LinkHub" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hMP-5w-j4n"/>
                         <viewControllerLayoutGuide type="bottom" id="VVt-SJ-bTO"/>
@@ -86,7 +94,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DBv-Jg-TOa">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="cellLink" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DBv-Jg-TOa">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -107,6 +115,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="listaLinks" destination="DBv-Jg-TOa" id="f1m-dB-tVO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6O-JR-ayI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

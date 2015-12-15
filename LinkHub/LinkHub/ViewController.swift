@@ -41,7 +41,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         if segue.identifier == "mostrarTelaListagem" {
             if let viewController2 = segue.destinationViewController as? ListagemViewController{
                 let texto = sender?.textLabel!.text
-                ListagemViewController.pasta = texto
+                viewController2.pasta = texto
             }
         }
     }
