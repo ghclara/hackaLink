@@ -18,24 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cl0-6m-C0b">
-                                <rect key="frame" x="20" y="64" width="560" height="50"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qvr-Ie-3bj">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="50"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzo-H4-P5F">
-                                                <rect key="frame" x="0.0" y="0.0" width="560" height="50"/>
-                                                <animations/>
-                                            </imageView>
-                                        </subviews>
-                                        <animations/>
-                                    </stackView>
-                                </subviews>
-                                <animations/>
-                            </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dxc-Go-Zvy">
-                                <rect key="frame" x="158" y="242" width="240" height="112"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dxc-Go-Zvy">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <animations/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jfx-Ke-mNF">
                                     <size key="itemSize" width="111" height="49"/>
@@ -44,8 +28,8 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uNb-by-pVU">
-                                        <rect key="frame" x="0.0" y="0.0" width="111" height="49"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="uNb-by-pVU" customClass="CollectionViewCell" customModule="LinkHub" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="111" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="111" height="49"/>
@@ -61,21 +45,13 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Dxc-Go-Zvy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="5q0-yS-Hwo"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dxc-Go-Zvy" secondAttribute="bottom" id="Gop-vL-sdV"/>
-                            <constraint firstItem="Dxc-Go-Zvy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OXu-P4-CVr"/>
-                            <constraint firstItem="Dxc-Go-Zvy" firstAttribute="top" secondItem="xzo-H4-P5F" secondAttribute="bottom" constant="75" id="Q3S-lf-mda"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Dxc-Go-Zvy" secondAttribute="trailing" id="Tyw-W2-OzX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xzo-H4-P5F" secondAttribute="trailing" id="WJt-R8-fXX"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="xzo-H4-P5F" secondAttribute="leading" id="kXS-jt-TyP"/>
-                            <constraint firstItem="Dxc-Go-Zvy" firstAttribute="top" secondItem="xzo-H4-P5F" secondAttribute="bottom" constant="5" id="vLV-9n-dVI"/>
+                            <constraint firstItem="Dxc-Go-Zvy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="OXu-P4-CVr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dxc-Go-Zvy" secondAttribute="trailing" constant="-20" id="Tyw-W2-OzX"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Q3S-lf-mda"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="dsK-5K-kQ3"/>
+                    <navigationItem key="navigationItem" title="linkhub" id="dsK-5K-kQ3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,11 +155,11 @@
             </objects>
             <point key="canvasLocation" x="-1103" y="1340"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Home-->
         <scene sceneID="fHz-sE-z49">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a9U-4j-Kh4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="52a-ka-eiX"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="52a-ka-eiX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3HR-Xd-Yd4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
