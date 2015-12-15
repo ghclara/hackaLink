@@ -35,6 +35,17 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         return cell
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "mostrarTelaListagem" {
+            if let viewController2 = segue.destinationViewController as? ListagemViewController{
+                let texto = sender?.textLabel!.text
+                ListagemViewController.pasta = texto
+            }
+        }
+    }
+    
     
 }
 
