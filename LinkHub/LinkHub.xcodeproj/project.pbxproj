@@ -14,6 +14,7 @@
 		3F0D9D691C1ED36000655117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0D9D681C1ED36000655117 /* Assets.xcassets */; };
 		3F0D9D6C1C1ED36000655117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0D9D6A1C1ED36000655117 /* LaunchScreen.storyboard */; };
 		3F159DF51C2173BA00CEFB0A /* PastaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F159DF41C2173BA00CEFB0A /* PastaDetailViewController.swift */; };
+		3F159DF91C21940D00CEFB0A /* LinkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F159DF81C21940D00CEFB0A /* LinkDetailViewController.swift */; };
 		3F7C48331C1ED93100DE02B7 /* Pasta+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C482F1C1ED93100DE02B7 /* Pasta+CoreDataProperties.swift */; };
 		3F7C48341C1ED93100DE02B7 /* Pasta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C48301C1ED93100DE02B7 /* Pasta.swift */; };
 		3F7C48351C1ED93100DE02B7 /* Link+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C48311C1ED93100DE02B7 /* Link+CoreDataProperties.swift */; };
@@ -32,6 +33,7 @@
 		3F0D9D6B1C1ED36000655117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F0D9D6D1C1ED36000655117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F159DF41C2173BA00CEFB0A /* PastaDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastaDetailViewController.swift; sourceTree = "<group>"; };
+		3F159DF81C21940D00CEFB0A /* LinkDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkDetailViewController.swift; sourceTree = "<group>"; };
 		3F7C482F1C1ED93100DE02B7 /* Pasta+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Pasta+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3F7C48301C1ED93100DE02B7 /* Pasta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pasta.swift; sourceTree = "<group>"; };
 		3F7C48311C1ED93100DE02B7 /* Link+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Link+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				3F0D9D5E1C1ED36000655117 /* AppDelegate.swift */,
 				3F0D9D601C1ED36000655117 /* ViewController.swift */,
 				3F0D9D621C1ED36000655117 /* Main.storyboard */,
+				3F159DF81C21940D00CEFB0A /* LinkDetailViewController.swift */,
 				3F159DF41C2173BA00CEFB0A /* PastaDetailViewController.swift */,
 				3FCA95321C203A3B00CAA444 /* ListagemViewController.swift */,
 				3F0D9D681C1ED36000655117 /* Assets.xcassets */,
@@ -168,6 +171,7 @@
 				3F0D9D611C1ED36000655117 /* ViewController.swift in Sources */,
 				3F7C48331C1ED93100DE02B7 /* Pasta+CoreDataProperties.swift in Sources */,
 				3F0D9D671C1ED36000655117 /* LinkHub.xcdatamodeld in Sources */,
+				3F159DF91C21940D00CEFB0A /* LinkDetailViewController.swift in Sources */,
 				3F0D9D5F1C1ED36000655117 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

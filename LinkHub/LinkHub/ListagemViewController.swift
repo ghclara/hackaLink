@@ -11,6 +11,7 @@ import CoreData
 
 class ListagemViewController: UIViewController, UITableViewDataSource , NSFetchedResultsControllerDelegate {
 
+    @IBOutlet weak var mLabel: UINavigationItem!
     @IBOutlet weak var listaLinks: UITableView!
     
     var pasta: Pasta? = nil
@@ -23,6 +24,7 @@ class ListagemViewController: UIViewController, UITableViewDataSource , NSFetche
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.listaLinks.dataSource = self
         fetchedResultController = getFetchedResultController()
         fetchedResultController.delegate = self
         
@@ -32,7 +34,7 @@ class ListagemViewController: UIViewController, UITableViewDataSource , NSFetche
         } catch let error as NSError{
             print("Erro ao buscar tarefas: \(error), \(error.userInfo)")
         }
-        self.nomePasta.text = pasta?.nome
+        self.mLabel.title = pasta?.nome
     }
     
     func getFetchedResultController() -> NSFetchedResultsController {
@@ -43,6 +45,9 @@ class ListagemViewController: UIViewController, UITableViewDataSource , NSFetche
     func linkFetchRequest() -> NSFetchRequest {
         let fetchRequest = NSFetchRequest(entityName: "Link")
         let sortDescription = NSSortDescriptor(key: "url", ascending: true)
+        let filter = pasta
+        let predicate = NSPredicate(format: "pasta = %@", filter!)
+        fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [sortDescription]
         return fetchRequest
     }
@@ -52,28 +57,44 @@ class ListagemViewController: UIViewController, UITableViewDataSource , NSFetche
         // Dispose of any resources that can be recreated.
     }
     
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        let numberOfSections = fetchedResultController.sections?.count
+        return numberOfSections!
     }
     
-
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let numberOfRowsInSection = fetchedResultController.sections?[section].numberOfObjects
+        return numberOfRowsInSection!
+    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellLink", forIndexPath: indexPath)
-//        let link = fetchedResultController.objectAtIndexPath(indexPath) as! Link
-        cell.textLabel?.text = "Teste"
+        let link = fetchedResultController.objectAtIndexPath(indexPath) as! Link
+        cell.textLabel?.text = link.url
         return cell
     }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        let manageObject:NSManagedObject = fetchedResultController.objectAtIndexPath(indexPath) as! NSManagedObject
+        contexto.deleteObject(manageObject)
+        do {
+            try contexto.save()
+        } catch _ {
+            print("Erro ao deletar link")
+        }
+    }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "mostrarTelaLink" {
+            let listagemController: LinkDetailViewController = segue.destinationViewController as! LinkDetailViewController
+            listagemController.pasta = pasta
+        }
+        
     }
-    */
-
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        listaLinks.reloadData()
+    }
 }
