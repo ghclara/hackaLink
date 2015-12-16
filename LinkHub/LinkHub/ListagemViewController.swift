@@ -9,11 +9,13 @@
 import UIKit
 import CoreData
 
-class ListagemViewController: UIViewController, NSFetchedResultsControllerDelegate {
+class ListagemViewController: UIViewController, UITableViewDataSource , NSFetchedResultsControllerDelegate {
 
     @IBOutlet weak var listaLinks: UITableView!
     
-    var pasta: String?
+    var pasta: Pasta? = nil
+
+    @IBOutlet weak var nomePasta: UILabel!
     let contexto = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     var fetchedResultController: NSFetchedResultsController = NSFetchedResultsController()
@@ -30,14 +32,15 @@ class ListagemViewController: UIViewController, NSFetchedResultsControllerDelega
         } catch let error as NSError{
             print("Erro ao buscar tarefas: \(error), \(error.userInfo)")
         }
+        self.nomePasta.text = pasta?.nome
     }
     
     func getFetchedResultController() -> NSFetchedResultsController {
-        fetchedResultController = NSFetchedResultsController(fetchRequest: taskFetchRequest(), managedObjectContext: contexto, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultController = NSFetchedResultsController(fetchRequest: linkFetchRequest(), managedObjectContext: contexto, sectionNameKeyPath: nil, cacheName: nil)
         return fetchedResultController
     }
     
-    func taskFetchRequest() -> NSFetchRequest {
+    func linkFetchRequest() -> NSFetchRequest {
         let fetchRequest = NSFetchRequest(entityName: "Link")
         let sortDescription = NSSortDescriptor(key: "url", ascending: true)
         fetchRequest.sortDescriptors = [sortDescription]

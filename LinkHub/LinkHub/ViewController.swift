@@ -72,11 +72,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, NSFetchedRes
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "mostrarTelaListagem" {
-            if let viewController2 = segue.destinationViewController as? ListagemViewController{
-                let texto = sender?.textLabel!!.text
-                viewController2.pasta = texto
-            }
+            let cell = sender as! UICollectionViewCell
+            let indexPath = CollectionPastas.indexPathForCell(cell)
+            let listagemController: ListagemViewController = segue.destinationViewController as! ListagemViewController
+            let pasta: Pasta = fetchedResultController.objectAtIndexPath(indexPath!) as! Pasta
+            listagemController.pasta = pasta
         }
+        
     }
 
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
