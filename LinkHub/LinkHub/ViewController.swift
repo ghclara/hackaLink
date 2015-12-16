@@ -20,15 +20,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, NSFetchedRes
         self.navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
         // Do any additional setup after loading the view, typically from a nib.
         self.CollectionPastas.dataSource = self
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        fetchedResultController = getFetchedResultController()
+        fetchedResultController.delegate = self
+        
         do {
             try fetchedResultController.performFetch()
         } catch let error as NSError {
             print("Erro ao buscar pastas: \(error), \(error.userInfo)")
         }
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
     }
     
     // MARK:- Retrieve Tasks
@@ -46,6 +51,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, NSFetchedRes
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         let numberOfSections = fetchedResultController.sections?.count
+        print("linhas:", numberOfSections)
+        
         return numberOfSections!
     }
     
@@ -71,7 +78,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, NSFetchedRes
             }
         }
     }
-    
+
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        CollectionPastas.reloadData()
+    }
     
 }
 
