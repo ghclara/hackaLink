@@ -107,8 +107,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pasta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcS-AD-TPZ">
-                                <rect key="frame" x="39" y="202" width="351" height="31"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pasta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcS-AD-TPZ">
+                                <rect key="frame" x="25" y="69" width="550" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -119,6 +119,9 @@
                         <constraints>
                             <constraint firstItem="hcS-AD-TPZ" firstAttribute="leading" secondItem="nSz-D0-2SJ" secondAttribute="leadingMargin" constant="30" id="7FV-6r-ZAX"/>
                             <constraint firstItem="hcS-AD-TPZ" firstAttribute="top" secondItem="Ign-16-eg7" secondAttribute="bottom" constant="30" id="Kp7-CH-kk9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hcS-AD-TPZ" secondAttribute="trailing" constant="5" id="NrN-Xt-kAO"/>
+                            <constraint firstItem="hcS-AD-TPZ" firstAttribute="leading" secondItem="nSz-D0-2SJ" secondAttribute="leadingMargin" constant="5" id="PS9-WR-38k"/>
+                            <constraint firstItem="hcS-AD-TPZ" firstAttribute="top" secondItem="Ign-16-eg7" secondAttribute="bottom" constant="5" id="WFY-eh-nVf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hcS-AD-TPZ" secondAttribute="trailing" constant="30" id="Z4c-tt-MCF"/>
                             <constraint firstItem="hcS-AD-TPZ" firstAttribute="top" secondItem="Ign-16-eg7" secondAttribute="bottom" constant="31" id="fzM-aY-Uy5"/>
                             <constraint firstItem="gP2-em-qxB" firstAttribute="top" secondItem="hcS-AD-TPZ" secondAttribute="bottom" constant="431" id="gZX-LZ-cct"/>
@@ -223,7 +226,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hhL-G8-zLo">
-                                <rect key="frame" x="50" y="94" width="500" height="38"/>
+                                <rect key="frame" x="50" y="74" width="500" height="58"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -232,7 +235,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hhL-G8-zLo" firstAttribute="top" secondItem="heD-jt-IUu" secondAttribute="bottom" constant="30" id="353-Me-HHV"/>
+                            <constraint firstItem="hhL-G8-zLo" firstAttribute="top" secondItem="heD-jt-IUu" secondAttribute="bottom" constant="10" id="353-Me-HHV"/>
                             <constraint firstItem="hhL-G8-zLo" firstAttribute="width" secondItem="wNF-dT-dDk" secondAttribute="width" id="Kba-Sl-R2t"/>
                             <constraint firstItem="97e-Ty-e3X" firstAttribute="top" secondItem="hhL-G8-zLo" secondAttribute="bottom" constant="419" id="dBj-sa-1zh"/>
                             <constraint firstItem="hhL-G8-zLo" firstAttribute="leading" secondItem="wNF-dT-dDk" secondAttribute="leadingMargin" constant="30" id="kdt-O7-rxt"/>
