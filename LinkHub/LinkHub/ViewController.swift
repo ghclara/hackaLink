@@ -38,8 +38,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, NSFetchedRes
     }
     
     func pastaFetchRequest() -> NSFetchRequest {
-        let fetchRequest = NSFetchRequest(entityName: "Tasks")
-        let sortDescriptor = NSSortDescriptor(key: "descricao", ascending: true)
+        let fetchRequest = NSFetchRequest(entityName: "Pasta")
+        let sortDescriptor = NSSortDescriptor(key: "nome", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         return fetchRequest
     }
@@ -59,11 +59,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, NSFetchedRes
         let pasta = fetchedResultController.objectAtIndexPath(indexPath) as! Pasta
         cell.textLabel?.text = pasta.nome
         return cell
-        
-//        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-//        let task = fetchedResultController.objectAtIndexPath(indexPath) as! Tasks
-//        cell.textLabel?.text = task.descricao! + " (" + task.local! + ")"
-//        return cell
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
