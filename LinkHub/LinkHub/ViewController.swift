@@ -7,32 +7,61 @@
 //
 
 import UIKit
+import CoreData
 
-class ViewController: UIViewController, UICollectionViewDataSource {
+class ViewController: UIViewController, UICollectionViewDataSource, NSFetchedResultsControllerDelegate {
+    let contexto = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
+    var fetchedResultController: NSFetchedResultsController = NSFetchedResultsController()
 
     @IBOutlet weak var CollectionPastas: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         self.CollectionPastas.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        do {
+            try fetchedResultController.performFetch()
+        } catch let error as NSError {
+            print("Erro ao buscar pastas: \(error), \(error.userInfo)")
+        }
     }
     
-    let pastas = ["a", "b", "c"]
+    // MARK:- Retrieve Tasks
+    func getFetchedResultController() -> NSFetchedResultsController {
+        fetchedResultController = NSFetchedResultsController(fetchRequest: pastaFetchRequest(), managedObjectContext: contexto, sectionNameKeyPath: nil, cacheName: nil)
+        return fetchedResultController
+    }
+    
+    func pastaFetchRequest() -> NSFetchRequest {
+        let fetchRequest = NSFetchRequest(entityName: "Tasks")
+        let sortDescriptor = NSSortDescriptor(key: "descricao", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        return fetchRequest
+    }
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        let numberOfSections = fetchedResultController.sections?.count
+        return numberOfSections!
+    }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pastas.count
+        let numberOfRowsInSection = fetchedResultController.sections?[section].numberOfObjects
+        return numberOfRowsInSection!
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
         let cell = CollectionPastas.dequeueReusableCellWithReuseIdentifier("collectionCell", forIndexPath: indexPath) as! CollectionViewCell
-        cell.textLabel?.text = "\(indexPath.section):\(indexPath.row)"
+        let pasta = fetchedResultController.objectAtIndexPath(indexPath) as! Pasta
+        cell.textLabel?.text = pasta.nome
         return cell
+        
+//        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+//        let task = fetchedResultController.objectAtIndexPath(indexPath) as! Tasks
+//        cell.textLabel?.text = task.descricao! + " (" + task.local! + ")"
+//        return cell
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -40,7 +69,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         // Pass the selected object to the new view controller.
         if segue.identifier == "mostrarTelaListagem" {
             if let viewController2 = segue.destinationViewController as? ListagemViewController{
-                let texto = sender?.textLabel!.text
+                let texto = sender?.textLabel!!.text
                 viewController2.pasta = texto
             }
         }
