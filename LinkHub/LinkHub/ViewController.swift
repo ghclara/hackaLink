@@ -17,6 +17,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, NSFetchedRes
     @IBOutlet weak var CollectionPastas: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
+        // Do any additional setup after loading the view, typically from a nib.
         self.CollectionPastas.dataSource = self
     }
 
