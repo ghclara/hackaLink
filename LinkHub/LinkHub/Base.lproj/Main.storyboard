@@ -72,7 +72,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <connections>
-                                    <segue destination="BrI-2O-gpP" kind="presentation" id="x7q-gF-eOX"/>
+                                    <segue destination="KCv-4l-IDD" kind="show" id="u9A-mj-YWh"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -85,20 +85,20 @@
             </objects>
             <point key="canvasLocation" x="-275" y="1340"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="dSK-mU-uMg">
+        <!--Title-->
+        <scene sceneID="SlX-5u-9hc">
             <objects>
-                <viewController modalPresentationStyle="currentContext" id="BrI-2O-gpP" sceneMemberID="viewController">
+                <viewController id="KCv-4l-IDD" customClass="PastaDetailViewController" customModule="LinkHub" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="AU8-p4-gom"/>
-                        <viewControllerLayoutGuide type="bottom" id="nvx-LD-Ae7"/>
+                        <viewControllerLayoutGuide type="top" id="Ign-16-eg7"/>
+                        <viewControllerLayoutGuide type="bottom" id="gP2-em-qxB"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BYr-q2-qAt">
+                    <view key="view" contentMode="scaleToFill" id="nSz-D0-2SJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome da pasta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Am-Yh-vFb">
-                                <rect key="frame" x="197" y="100" width="255" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pasta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcS-AD-TPZ">
+                                <rect key="frame" x="36" y="95" width="351" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -107,10 +107,27 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="lyN-5U-UgL">
+                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="4Eb-Ae-zRe">
+                            <connections>
+                                <action selector="cancel:" destination="KCv-4l-IDD" id="8Py-68-mpx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="H4p-8e-fH2">
+                            <connections>
+                                <action selector="done:" destination="KCv-4l-IDD" id="3FL-DB-Xzd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="PastaLabel" destination="hcS-AD-TPZ" id="UkH-Zp-DcV"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XHw-az-XwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F6I-YF-bfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-275" y="2162"/>
+            <point key="canvasLocation" x="-275" y="2166"/>
         </scene>
         <!--Listagem View Controller-->
         <scene sceneID="Cw4-O7-Uhy">
