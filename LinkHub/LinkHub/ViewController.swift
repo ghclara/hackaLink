@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UICollectionViewDataSource, NSFetchedResultsControllerDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, UICollectionViewDelegateFlowLayout {
     let contexto = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     var fetchedResultController: NSFetchedResultsController = NSFetchedResultsController()
@@ -29,6 +29,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, NSFetchedRes
         } catch let error as NSError {
             print("Erro ao buscar pastas: \(error), \(error.userInfo)")
         }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +67,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, NSFetchedRes
         let cell = CollectionPastas.dequeueReusableCellWithReuseIdentifier("collectionCell", forIndexPath: indexPath) as! CollectionViewCell
         let pasta = fetchedResultController.objectAtIndexPath(indexPath) as! Pasta
         cell.textLabel?.text = pasta.nome
+        
+        cell.layer.shadowColor = UIColor.blackColor().CGColor
+        cell.layer.shadowOffset = CGSizeMake(0, 1)
+        cell.layer.shadowOpacity = 1
+        cell.layer.shadowRadius = 1.0
+        cell.clipsToBounds = false
+        cell.layer.masksToBounds = false
+        
         return cell
     }
     

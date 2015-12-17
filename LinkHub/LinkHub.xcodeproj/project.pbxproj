@@ -21,6 +21,7 @@
 		3F7C48361C1ED93100DE02B7 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C48321C1ED93100DE02B7 /* Link.swift */; };
 		3FAB60781C2024A2001D4791 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB60771C2024A2001D4791 /* CollectionViewCell.swift */; };
 		3FCA95331C203A3B00CAA444 /* ListagemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA95321C203A3B00CAA444 /* ListagemViewController.swift */; };
+		3FCF192F1C22CCF0003ED7FC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF192E1C22CCF0003ED7FC /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		3F7C48321C1ED93100DE02B7 /* Link.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		3FAB60771C2024A2001D4791 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		3FCA95321C203A3B00CAA444 /* ListagemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListagemViewController.swift; sourceTree = "<group>"; };
+		3FCF192E1C22CCF0003ED7FC /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				3F0D9D6D1C1ED36000655117 /* Info.plist */,
 				3F0D9D651C1ED36000655117 /* LinkHub.xcdatamodeld */,
 				3FAB60771C2024A2001D4791 /* CollectionViewCell.swift */,
+				3FCF192E1C22CCF0003ED7FC /* TableViewCell.swift */,
 			);
 			path = LinkHub;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				3F0D9D611C1ED36000655117 /* ViewController.swift in Sources */,
 				3F7C48331C1ED93100DE02B7 /* Pasta+CoreDataProperties.swift in Sources */,
 				3F0D9D671C1ED36000655117 /* LinkHub.xcdatamodeld in Sources */,
+				3FCF192F1C22CCF0003ED7FC /* TableViewCell.swift in Sources */,
 				3F159DF91C21940D00CEFB0A /* LinkDetailViewController.swift in Sources */,
 				3F0D9D5F1C1ED36000655117 /* AppDelegate.swift in Sources */,
 			);

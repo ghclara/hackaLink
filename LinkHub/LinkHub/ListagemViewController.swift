@@ -69,9 +69,9 @@ class ListagemViewController: UIViewController, UITableViewDataSource , NSFetche
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cellLink", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellLink") as! TableViewCell
         let link = fetchedResultController.objectAtIndexPath(indexPath) as! Link
-        cell.textLabel?.text = link.url
+        cell.linkLabel?.text = link.url
         return cell
     }
     
