@@ -43,13 +43,15 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <size key="shadowOffset" width="0.0" height="1"/>
                                                 </label>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.964527428150177" green="0.9643215537071228" blue="0.9890705943107605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottomMargin" secondItem="DzD-k8-4zV" secondAttribute="bottom" constant="2" id="aiv-Ob-HO3"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="DzD-k8-4zV" secondAttribute="trailing" constant="2" id="m8Y-FI-Cwv"/>
@@ -202,14 +204,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="519" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f34-BM-dPr">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f34-BM-dPr">
                                                     <rect key="frame" x="8" y="8" width="427" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NK0-HT-nef">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NK0-HT-nef">
                                                     <rect key="frame" x="453" y="3" width="46" height="30"/>
                                                     <animations/>
                                                     <state key="normal" title="Ir"/>
@@ -220,10 +222,22 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="f34-BM-dPr" secondAttribute="bottom" id="Ajb-gL-a7x"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="f34-BM-dPr" secondAttribute="leading" constant="5" id="Cqd-k5-X8T"/>
                                                 <constraint firstItem="NK0-HT-nef" firstAttribute="leading" secondItem="f34-BM-dPr" secondAttribute="trailing" constant="5" id="UaQ-3D-rZK"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="NK0-HT-nef" secondAttribute="trailing" constant="5" id="YHH-OG-esC"/>
+                                                <constraint firstItem="NK0-HT-nef" firstAttribute="top" secondItem="1sT-1O-oeV" secondAttribute="topMargin" constant="10" id="eL3-LC-rrW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="f34-BM-dPr" secondAttribute="trailing" constant="60" id="hga-uO-QvH"/>
+                                                <constraint firstAttribute="topMargin" secondItem="f34-BM-dPr" secondAttribute="top" constant="10" id="icF-FR-NGT"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="NK0-HT-nef" secondAttribute="bottom" id="orz-xF-BZY"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="icF-FR-NGT"/>
+                                                    <exclude reference="UaQ-3D-rZK"/>
+                                                    <exclude reference="eL3-LC-rrW"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>

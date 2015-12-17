@@ -74,6 +74,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, NSFetchedRes
         cell.layer.shadowRadius = 1.0
         cell.clipsToBounds = false
         cell.layer.masksToBounds = false
+        cell.layer.cornerRadius = 5
         
         return cell
     }
