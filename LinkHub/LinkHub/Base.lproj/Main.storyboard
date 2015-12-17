@@ -18,6 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pastas" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNe-2O-viv">
+                                <rect key="frame" x="0.0" y="64" width="600" height="50"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dxc-Go-Zvy">
                                 <rect key="frame" x="0.0" y="121" width="600" height="430"/>
                                 <animations/>
@@ -41,7 +51,6 @@
                                                     <animations/>
                                                     <edgeInsets key="layoutMargins" top="1" left="1" bottom="1" right="1"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <size key="shadowOffset" width="0.0" height="1"/>
@@ -51,7 +60,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.964527428150177" green="0.9643215537071228" blue="0.9890705943107605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.83304649591445923" green="0.90530318021774292" blue="0.95543605089187622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottomMargin" secondItem="DzD-k8-4zV" secondAttribute="bottom" constant="2" id="aiv-Ob-HO3"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="DzD-k8-4zV" secondAttribute="trailing" constant="2" id="m8Y-FI-Cwv"/>
@@ -66,16 +75,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pastas" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNe-2O-viv">
-                                <rect key="frame" x="0.0" y="64" width="600" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -117,7 +116,7 @@
             </objects>
             <point key="canvasLocation" x="-275" y="1340"/>
         </scene>
-        <!--Title-->
+        <!--Pasta-->
         <scene sceneID="SlX-5u-9hc">
             <objects>
                 <viewController id="KCv-4l-IDD" customClass="PastaDetailViewController" customModule="LinkHub" customModuleProvider="target" sceneMemberID="viewController">
@@ -159,7 +158,7 @@
                         </variation>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="lyN-5U-UgL">
+                    <navigationItem key="navigationItem" title="Pasta" id="lyN-5U-UgL">
                         <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="4Eb-Ae-zRe">
                             <connections>
                                 <action selector="cancel:" destination="KCv-4l-IDD" id="8Py-68-mpx"/>
@@ -229,7 +228,7 @@
                                                 <constraint firstItem="NK0-HT-nef" firstAttribute="top" secondItem="1sT-1O-oeV" secondAttribute="topMargin" constant="10" id="eL3-LC-rrW"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="f34-BM-dPr" secondAttribute="trailing" constant="60" id="hga-uO-QvH"/>
                                                 <constraint firstAttribute="topMargin" secondItem="f34-BM-dPr" secondAttribute="top" constant="10" id="icF-FR-NGT"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="NK0-HT-nef" secondAttribute="bottom" id="orz-xF-BZY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="NK0-HT-nef" secondAttribute="bottom" constant="-5" id="orz-xF-BZY"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
